@@ -1,0 +1,28 @@
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity 0.8.19;
+
+contract wallet {
+    address[]  public accounts;
+    address payable public owner;
+
+    constructor(address sender){
+        owner = payable(sender);
+    } 
+
+    function deposit() public payable{
+
+    }
+
+    function send( address sendTo , uint amount) public payable{
+        require(owner == msg.sender, "Sender must be the owner of the contract");
+        payable(sendTo).transfer(amount);
+    }
+
+    function checkBalance() public view returns(uint){
+        return address(this).balance;
+    }
+         
+
+
+
+}
