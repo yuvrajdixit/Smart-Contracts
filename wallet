@@ -21,6 +21,10 @@ contract wallet {
     function checkBalance() public view returns(uint){
         return address(this).balance;
     }
+    function checkBalanceAgain() public view returns(uint){
+        return address(this).balance;
+    }
+   
          
 
 
